@@ -84,7 +84,7 @@ body{
 					<th>Hired Date</th>
 				</tr>
 				<tr>
-					<td><a href="record/<%=emp.getId()%>"><%=emp.getId()%></td>
+					<td><a href="<%=emp.getId()%>"><%=emp.getId()%></td>
 					<td><%=emp.getFirstName()%></td>
 					<td><%=emp.getLastName()%></td>
 					<td><%=emp.getDob()%></td>
