@@ -1,5 +1,5 @@
 <%-- 
-    Document   : employee
+    Document   : record
     Created on : Apr 2, 2022
     Author     : Maria Ocampo
 

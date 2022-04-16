@@ -23,10 +23,19 @@ public class EmployeeController extends jakarta.servlet.http.HttpServlet {
 	private static final String SUMMARY = "/recordSummary.jsp";
 	private RequestDispatcher view;
 	
+	/**
+	 * 
+	 * @return view
+	 */
 	public RequestDispatcher getView() {
 		return view;
 	}
 	
+	/**
+	 * 
+	 * @param request
+	 * @param viewPath
+	 */
 	public void setView(HttpServletRequest request, String viewPath) {
 		view = request.getRequestDispatcher(viewPath);
 	}
@@ -47,6 +56,7 @@ public class EmployeeController extends jakarta.servlet.http.HttpServlet {
 		DAO dao = new DAOImpl();
 		
 		if (path==null) {
+			//update query based on filter applied
 			String filter = null;
 			String firstName = null;
 			String lastName = null;

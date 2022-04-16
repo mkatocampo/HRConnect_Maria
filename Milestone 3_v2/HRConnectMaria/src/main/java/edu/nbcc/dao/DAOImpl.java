@@ -293,48 +293,6 @@ public class DAOImpl implements DAO {
 	}
 
 	@Override
-	public Employee findByName(String name) {
-		Connection conn = null;
-		PreparedStatement statement = null;
-		try{
-			conn = getConnection();
-			statement = conn.prepareStatement(FIND_BY_NAME);
-			statement.setString(1, name);
-			ResultSet rs = statement.executeQuery();
-			Employee emp = new Employee();
-			if (rs.next()) {
-				emp.setId(rs.getInt("id"));
-				emp.setFirstName(rs.getString("firstName"));
-				emp.setLastName(rs.getString("lastName"));
-				emp.setDob(rs.getDate("dob"));
-				emp.setSin(rs.getInt("sin"));
-				emp.setGender(rs.getString("gender"));
-				emp.setStreetAddress(rs.getString("streetAddress"));
-				emp.setPostalCode(rs.getString("postalCode"));
-				emp.setProvince(rs.getString("province"));
-				emp.setCity(rs.getString("city"));
-				emp.setCountry(rs.getString("country"));
-				emp.setEmail(rs.getString("email"));
-				emp.setPhoneNumber(rs.getString("phoneNumber"));
-				emp.setHiredDate(rs.getDate("hiredDate"));
-				emp.setTerminatedDate(rs.getDate("terminatedDate"));
-				emp.setActive(rs.getBoolean("isActive"));
-				emp.setSalary(rs.getDouble("salary"));
-				emp.setUserId(rs.getInt("userId"));
-				emp.setJobId(rs.getInt("jobId"));
-				emp.setEmployeeTypeId(rs.getInt("employeeTypeId"));
-			}
-			return emp;
-		}catch(SQLException e) {
-			System.out.println(e.getMessage());
-			return null;
-		}finally {
-			close(statement);
-			close(conn);
-		}
-	}
-
-	@Override
 	public Employee findById(int id) {
 		Connection conn = null;
 		PreparedStatement statement = null;

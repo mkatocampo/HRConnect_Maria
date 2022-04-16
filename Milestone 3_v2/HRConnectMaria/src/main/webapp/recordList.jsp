@@ -1,5 +1,5 @@
 <%-- 
-    Document   : employee list
+    Document   : record list
     Created on : Apr 2, 2022
     Author     : Maria Ocampo
 

@@ -14,39 +14,37 @@ import edu.nbcc.model.*;
 public interface DAO {
 	
 	/**
-	 * delete a book
-	 * @param d
+	 * delete a record
+	 * @param id
 	 * @return
 	 */
-	public int delete(int d);
+	public int delete(int id);
 	
 	/**
-	 * insert a book
-	 * @param book
+	 * insert a record
+	 * @param e
 	 * @return
 	 */
-	public int insert (Employee book);
+	public int insert (Employee e);
 	
 	/**
-	 * update a book
-	 * @param book
+	 * update a record
+	 * @param e
 	 * @return
 	 */
-	public int update (Employee book);
+	public int update (Employee e);
 	
 	/**
-	 * find all books
+	 * list employee records
 	 * @return
 	 */
 	public List<Employee> findAll(String filter, String firstName,String  lastName,String hireDate,String terminatedDate,String gender, String isActive);
 	
 	/**
-	 * get book by name
-	 * @param name
+	 * find employee by id
+	 * @param id
 	 * @return
 	 */
-	public Employee findByName(String name);
-	
 	public Employee findById(int id);
 	
 	/**
@@ -62,7 +60,7 @@ public interface DAO {
 	public List<EmployeeType> findEmployeeTypes();
 	
 	/**
-	 * find user
+	 * validate user access credentials
 	 * @return
 	 */
 	public User validateUser(String name, String password);
