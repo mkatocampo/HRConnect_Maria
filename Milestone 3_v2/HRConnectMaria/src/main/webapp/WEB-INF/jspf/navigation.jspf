@@ -1,0 +1,51 @@
+<%-- any content can be specified here e.g.: --%>
+<%@ page pageEncoding="UTF-8"%>
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+	<a class="navbar-brand" href="#"><h2
+			style="color: #48aaad; opacity: 0.5; text-shadow: 2px 2px #ff0000">HR
+			Connect</h2></a>
+	<button class="navbar-toggler" type="button" data-toggle="collapse"
+		data-target="#navbarNav" aria-controls="navbarNav"
+		aria-expanded="false" aria-label="Toggle navigation">
+		<span class="navbar-toggler-icon"></span>
+	</button>
+	<div class="collapse navbar-collapse" id="navbarNav">
+		<%
+		if (request.getParameter("logout") != null) {
+			session.removeAttribute("sessusername");
+			response.sendRedirect(request.getContextPath() + "/index.jsp");
+		}
+		%>
+		<ul class="navbar-nav">
+			<li class="nav-item dropdown"><a
+				class="nav-link dropdown-toggle" data-toggle="dropdown" href="#"
+				role="button" aria-haspopup="true" aria-expanded="false">HRConnect</a>
+				<div class="dropdown-menu">
+					<a class="dropdown-item"
+						href="${pageContext.request.contextPath}/recordList">Employee
+						List</a> <a class="dropdown-item"
+						href="${pageContext.request.contextPath}/record/create">Employee
+						Record</a>
+				</div></li>
+			<%
+			if (session.getAttribute("sessusername") != null) {
+				String username = (String) session.getAttribute("sessusername");
+			%>
+			<li class="nav-item"><a class="nav-link"><i
+					class="fas fa-angle-double-right"></i>Welcome, <%=username%></a></li>
+
+			<%
+			}
+			%>
+			<form method="POST">
+				<li class="nav-item">
+
+					<button class="nav-link bg-light" style="border: none;"
+						type="submit" name="logout">Log out</button>
+					</a>
+
+				</li>
+			</form>
+		</ul>
+	</div>
+</nav>
