@@ -27,6 +27,7 @@ body {
 <title>HRConnect</title>
 </head>
 <body class="p-4">
+<div style="position:relative; top: 20%;">
 	<div style="width: 500px; margin: auto;">
 		<img src="${pageContext.request.contextPath}/Images/hrconnectlogo.jpg"
 			width="500px;"></img>
@@ -68,6 +69,7 @@ body {
 			}
 			%>
 		</form>
+	</div>
 	</div>
 </body>
 </html>

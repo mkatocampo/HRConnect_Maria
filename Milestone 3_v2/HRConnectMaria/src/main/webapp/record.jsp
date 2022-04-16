@@ -175,8 +175,8 @@ if (session.getAttribute("sessusername") != null) {
 							}
 							%>
 
-							<option value="Male" <%=isActive%>>true</option>
-							<option value="Female" <%=isInactive%>>false</option>
+							<option value="true" <%=isActive%>>true</option>
+							<option value="false" <%=isInactive%>>false</option>
 					</select></td>
 				</tr>
 
@@ -238,7 +238,7 @@ if (session.getAttribute("sessusername") != null) {
 		%>
 		<div style="width: fit-content; margin: auto;">
 			<button class="btn btn-primary no-print" onclick="window.print()"
-				style="width: 180px; height: 60px;">Print Employee
+				style="width: 360px; height: 60px;">Print Employee
 				Information</button>
 		</div>
 		<%

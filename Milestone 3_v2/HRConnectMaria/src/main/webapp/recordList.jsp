@@ -23,6 +23,12 @@ body {
 	background-repeat: no-repeat;
 	background-size: cover;
 }
+
+@media print {
+	.no-print, .no-print * {
+		display: none !important;
+	}
+}
 </style>
 <!DOCTYPE html>
 <html>
@@ -35,7 +41,7 @@ if (session.getAttribute("sessusername") != null) {
 </head>
 <body class="p-4">
 	<%@include file="WEB-INF/jspf/navigation.jspf"%>
-	<div
+	<div class="no-print"
 		style="width: max-width; padding: 20px; margin: auto; opacity: 0.7; background-color: white;">
 	<i><h3 style="text-align:center;">Employee Records</h3></i><hr>
 		<form action="recordList" method="GET">
@@ -129,7 +135,7 @@ if (session.getAttribute("sessusername") != null) {
 			%>
 		</table>
 		<div style="width: fit-content; padding: 20px; margin: auto;">
-			<button class="btn btn-primary" onclick="window.print()" name="Print"
+			<button class="btn btn-primary no-print" onclick="window.print()" name="Print"
 				style="width: 180px; height: 60px;">Print Employee List</button>
 		</div>
 		<%
